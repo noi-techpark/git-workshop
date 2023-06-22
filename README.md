@@ -59,11 +59,12 @@ git config --global init.defaultBranch main
 ```
 
 ## SSH key
-Create an ssh key if you haven't already created one.
-Here Github's SSH key guide  
-https://docs.github.com/en/authentication/connecting-to-github-with-ssh
+To authenticate with git platforms like GitHub or Gitlab, you need to use an SSH key.
 
-Test the connection
+Create an ssh key if you haven't already created one.
+Here Github's SSH key guide https://docs.github.com/en/authentication/connecting-to-github-with-ssh
+
+You can test if your Github setup is correct
 ```sh
 ssh -T git@github.com
 ```
@@ -72,6 +73,8 @@ You should see the following message
 ```sh
 Hi $user! You've successfully authenticated, but GitHub does not provide shell access.
 ```
+
+The same works for Gitlab and other git platforms.
 
 # First commit
 Lets create a new commit and see how git the basic commands of git work.  
