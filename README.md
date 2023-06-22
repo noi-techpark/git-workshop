@@ -24,6 +24,9 @@ Simple git hands on workshop to learn how to setup and use git.
   - [Cloning a remote repository](#cloning-a-remote-repository)
   - [Pulling from a remote repository](#pulling-from-a-remote-repository)
   - [Resolving merge conflicts](#resolving-merge-conflicts)
+- [Working with branches](#working-with-branches)
+  - [Development and production branch](#development-and-production-branch)
+  - [Synchronize branches](#synchronize-branches)
 - [Documentation and cheat sheets](#documentation-and-cheat-sheets)
 
 # Configuration
@@ -355,6 +358,57 @@ git push
 ```
 
 The other users then need to pull you changes.
+
+# Working with branches
+Git branches allow you to work on different features, bug fixes, or experiments without interfering with the main codebase.
+Each branch can have its own commits, which makes it easy to switch between different lines of development and merge them back together when necessary.
+
+## Development and production branch
+To keep your production state separated from your development and test state, you can use branches.
+Normally you would have a `development` and a `production` branch.  
+We chose to name our `development` branch `main` branch and our `production` branch `prod`.
+
+The `main` branch is also our main branch, so when cloning the repository from a remote, you are already ready to work.
+
+Now lets create a `prod` branch
+```sh
+git branch prod
+git checkout prod
+```
+
+Now we can push the new created branch to our remote repository.
+```sh
+git push origin prod
+```
+
+The next times you can simply do `git push` without naming  remote `origin`.
+
+## Synchronize branches
+To synchronize branches you can merge on branch into another branch.  
+
+Lets create some changes in the main branch
+```sh
+git checkout main
+echo 'echo "Lets merge some branches"' >> hello-git.sh
+git status
+git commit hello-git.sh -m "add line to hello-git.sh"
+```
+
+Now lets merge the changes to the prod branch
+```sh
+git log
+git checkout prod
+git log
+git merge main
+git log
+```
+Now the prod branch is at the same state as the main branch.  
+Merge conflicts can happen also between branches. You can solve them the same way as when you pull from a remote as we did before  
+[Resolving merge conflicts](#resolving-merge-conflicts)
+
+Note: `merge` always creates a merge commit. TO prevent this you can use `rebase` instead.
+Here the official  rebase documentation https://git-scm.com/docs/git-rebase
+
 
 # Documentation and cheat sheets
 For further information and other commands, check out the official documentation  
