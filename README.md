@@ -11,7 +11,7 @@ Simple git hands on workshop to learn how to setup and use git.
   - [SSH key](#ssh-key)
 - [First commit](#first-commit)
   - [Setup](#setup)
-  - [Add and commit a file](#add-and-commit-a-file)
+  - [Add a file to git](#add-a-file-to-git)
   - [Add and commit a directory](#add-and-commit-a-directory)
   - [Remove a committed file](#remove-a-committed-file)
   - [Compare a committed file to a previous state](#compare-a-committed-file-to-a-previous-state)
@@ -65,7 +65,8 @@ git config --global init.defaultBranch main
 To authenticate with git platforms like GitHub or Gitlab, you need to use an SSH key.
 
 Create an ssh key if you haven't already created one.
-Here Github's SSH key guide https://docs.github.com/en/authentication/connecting-to-github-with-ssh
+Here Github's SSH key guide  
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh
 
 You can test if your Github setup is correct
 ```sh
@@ -95,24 +96,19 @@ Initialize git repository
 git init
 ```
 
-Change default branch from master to main
-github's default branch is already main
+Change default branch from master to main, if you didn't set the global default branch to main in the previous step [Default branch](#default-branch)
 ```sh
 git branch -m main
 ```
 
-Lets see current status
+Lets see current status and log
 ```sh
 git status
-```
-
-Lets see the log
-```sh
 git log
 ```
 
-## Add and commit a file
-Create first file
+## Add a file to git
+Create a file
 ```sh
 echo "# Hello git" > README.md
 git status
@@ -123,8 +119,10 @@ Add file to git repository
 ```sh
 git add README.md
 git status
-```sh
-Commit file with message "initial commit"
+```
+
+Commit file with message "initial commit".  
+Note: Here you will use the editor you set in the previous step [Editor](#editor)
 ```sh
 git commit
 ```
@@ -137,12 +135,13 @@ git log
 
 ## Add and commit a directory
 
-Create directory for source code
+Create directory for source code.  
+Its best practice to create a separate directory for the source code.
 ```sh
 mkdir src
 git status
 ```
-Note: Empty directories are not visible to git
+Hint: Empty directories are not visible to git
 
 Create second file
 ```sh
@@ -158,22 +157,20 @@ git commit hello-git.sh
 ```
 
 Files need to be added to git first to be committed
-
 ```sh
 git add hello-git.sh
 git commit -m "create hello-git.sh"
 ```
 
 ## Remove a committed file
-
-If you want to remove the file from the git repository and the filesystem, use:
+If you want to remove the file from the git repository and the filesystem
 
 ```sh
 git rm hello-git.sh
 git commit -m "remove hello-git.sh"
 ```
 
-But if you want to remove the file only from the git repository and not from the filesystem, use:
+But if you want to remove the file only from the git repository and not from the filesystem
 
 ```sh
 git rm --cached hello-git.sh
@@ -248,7 +245,6 @@ Stay aware of this before pushing a commit to a remote repository.
 
 
 # Ignoring files/directories with .gitignore
-
 Create simple script to read environment variables
 
 ```sh
