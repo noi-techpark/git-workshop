@@ -12,7 +12,7 @@ Simple git hands on workshop to learn how to setup and use git.
 - [First commit](#first-commit)
   - [Setup](#setup)
   - [Add a file to git](#add-a-file-to-git)
-  - [Add and commit a directory](#add-and-commit-a-directory)
+  - [Add directory to git](#add-directory-to-git)
   - [Remove a committed file](#remove-a-committed-file)
   - [Compare a committed file to a previous state](#compare-a-committed-file-to-a-previous-state)
   - [Revert a committed file to a previous state](#revert-a-committed-file-to-a-previous-state)
@@ -133,7 +133,7 @@ git status
 git log
 ```
 
-## Add and commit a directory
+## Add directory to git
 
 Create directory for source code.  
 Its best practice to create a separate directory for the source code.
@@ -402,7 +402,7 @@ Now the prod branch is at the same state as the main branch.
 Merge conflicts can happen also between branches. You can solve them the same way as when you pull from a remote as we did before  
 [Resolving merge conflicts](#resolving-merge-conflicts)
 
-Note: `merge` always creates a merge commit. TO prevent this you can use `rebase` instead.
+Note: `merge` always creates a merge commit. To prevent this you can use `rebase` instead.
 Here the official  rebase documentation https://git-scm.com/docs/git-rebase
 
 
