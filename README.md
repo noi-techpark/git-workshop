@@ -353,7 +353,7 @@ You have to decide which change you want to keep, by deleting the rest.
 You can keep also both changes of course, then you just need to delete lines 1, 3 and 5.
 Hint: Codium/VSCode will provide you a nice way to solve merge conflict with one click.
 ```sh
-$ cat merge.txt
+$ cat hello-git.sh
 <<<<<<< HEAD
 This line was changed in the current HEAD
 =======
@@ -363,7 +363,7 @@ And was also changed on branch-to-merge which results in a conflict
 
 Once you fixed the merge conflicts, you can add the conflicting files to git, commit and push to the remote again.
 ```sh
-git add path/to/conflicting-file
+git add hello-git.sh
 git commit
 git push
 ```
