@@ -15,6 +15,7 @@ Simple git hands on workshop to learn how to setup and use git.
   - [Add directory to git](#add-directory-to-git)
   - [Remove a committed file](#remove-a-committed-file)
   - [Compare a committed file to a previous state](#compare-a-committed-file-to-a-previous-state)
+  - [Restore a non committed change](#restore-a-non-committed-change)
   - [Revert a committed file to a previous state](#revert-a-committed-file-to-a-previous-state)
   - [Delete commit from history](#delete-commit-from-history)
 - [Ignoring files/directories with .gitignore](#ignoring-filesdirectories-with-gitignore)
@@ -200,6 +201,15 @@ git log hello-git.sh
 Now we pick the `hash` of the old commit `create hello-git.sh`
 ```sh
 git diff <commit-hash> hello-git.sh
+```
+
+## Restore a non committed change
+If you want to restore a file as it was at your last commit, you can use `git restore`.
+
+```sh
+echo 'echo "Lets change the file"' >> hello-git.sh
+git git status
+git restore hello-git.sh
 ```
 
 ## Revert a committed file to a previous state
