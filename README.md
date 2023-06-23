@@ -345,7 +345,22 @@ git pull
 ```
 ## Resolving merge conflicts
 Depending on the files and lines you changed, the pull might work with no problem or it result in a merge conflict. 
-Git will automatically tell you where the conflicts are and you can pick which changes you want to keep.
+Git will automatically tells you where the conflicts are and you can pick which changes you want to keep.  
+
+Here an example for a merge conflict where the same line was changed in both branches.
+Below the `HEAD` you can see the change that was made on the branch where you want to merge the `branch-to-merge` and than  the changes made on the `branch-to-merge` branch.
+You have to decide which change you want to keep, by deleting the rest.
+You can keep also both changes of course, then you just need to delete lines 1, 3 and 5.
+Hint: Codium/VSCode will provide you a nice way to solve merge conflict with one click.
+```sh
+$ cat merge.txt
+<<<<<<< HEAD
+This line was changed in the current HEAD
+=======
+And was also changed on branch-to-merge which results in a conflict
+>>>>>>> branch-to-merge
+```
+
 Once you fixed the merge conflicts, you can add the conflicting files to git, commit and push to the remote again.
 ```sh
 git add path/to/conflicting-file
@@ -353,7 +368,7 @@ git commit
 git push
 ```
 
-The other users then need to pull you changes.
+The other users then needs to pull you changes.
 
 # Working with branches
 Git branches allow you to work on different features, bug fixes, or experiments without interfering with the main codebase.
