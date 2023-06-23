@@ -18,6 +18,7 @@ Simple git hands on workshop to learn how to setup and use git.
   - [Restore a non committed change](#restore-a-non-committed-change)
   - [Revert a committed file to a previous state](#revert-a-committed-file-to-a-previous-state)
   - [Delete commit from history](#delete-commit-from-history)
+  - [Change last commit message](#change-last-commit-message)
 - [Ignoring files/directories with .gitignore](#ignoring-filesdirectories-with-gitignore)
   - [.gitignore example](#gitignore-example)
 - [Working with remote repositories](#working-with-remote-repositories)
@@ -253,6 +254,21 @@ git commit hello-git.sh -m "revert hello-git.sh to previous state"
 Note: When working with remote repositories, `reset --hard` can cause problems.
 Stay aware of this before pushing a commit to a remote repository.
 
+## Change last commit message
+If you want to change the last commit message, you can do so by passing `--ammend` to a new commit command.
+
+```sh
+echo 'echo "I never do typos"' >> hello-git.sh
+git commit hello-git.sh -m "I nvere do tpyos"
+git log
+git commit --amend -m "I never do typos"
+git log
+```
+
+Note: This action overrides your commit history and changes the hash of the commit.
+If you already pushed to the repository, you will have to try with `git push --force-with-lease`.
+If someones else already pushed other commits, `--force-with-lease` option aborts the push.
+Just `--force` would override the other commit.
 
 # Ignoring files/directories with .gitignore
 Create simple script to read environment variables
