@@ -155,7 +155,7 @@ git status
 
 Commit second file
 ```sh
-git commit hello-git.sh
+git commit src/hello-git.sh
 ```
 
 Files need to be added to git first to be committed
@@ -168,7 +168,7 @@ git commit -m "create hello-git.sh"
 If you want to remove the file from the git repository and the filesystem
 
 ```sh
-git rm hello-git.sh
+rm hello-git.sh
 git commit -m "remove hello-git.sh"
 ```
 
