@@ -9,6 +9,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Error
+        run: exit 12 
+
+
   build:
     runs-on: ubuntu-22.04
     steps:
