@@ -1,3 +1,5 @@
+[![REUSE Compliance](https://github.com/noi-techpark/git-workshop/actions/workflows/reuse-lint.yml/badge.svg)](https://github.com/noi-techpark/opendatahub-docs/wiki/REUSE#badges)
+
 # Git workshop
 
 Simple git hands on workshop to learn how to setup and use git.
